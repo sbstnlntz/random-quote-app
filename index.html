@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Random Quote App mit Favoriten, Suche, Dark Mode und Tageszitat.">
+  <title>Random Quote App</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="floating-orb floating-orb--blue" aria-hidden="true"></div>
+  <div class="floating-orb floating-orb--pink" aria-hidden="true"></div>
+  <header class="app-header">
+    <div class="header-bar">
+      <div class="header-left">
+        <button
+          id="languageToggle"
+          class="icon-button language-button"
+          type="button"
+          aria-label="Sprache: Deutsch"
+          aria-pressed="false"
+          data-language="de"
+        >
+          <span class="language-button__flag language-button__flag--de" aria-hidden="true">🇩🇪</span>
+          <span class="language-button__flag language-button__flag--en" aria-hidden="true">🇬🇧</span>
+        </button>
+        <button id="darkModeToggle" class="icon-button" type="button" aria-pressed="false" aria-label="Dark Mode umschalten">
+          ☀️
+        </button>
+      </div>
+      <button
+        id="openFavorites"
+        class="pill-button favorites-menu"
+        type="button"
+        aria-controls="favoritesPanel"
+        aria-expanded="false"
+        data-i18n="buttons.openFavorites"
+      >
+        Favoriten
+      </button>
+    </div>
+    <h1 id="appTitle" data-i18n="app.title">Random Quote App</h1>
+  </header>
+
+  <main class="app-main">
+    <section class="daily-quote" aria-labelledby="dailyQuoteHeading">
+      <div class="section-header">
+        <h2 id="dailyQuoteHeading" data-i18n="daily.heading">Zitat des Tages</h2>
+        <p class="section-subtitle" data-i18n="daily.subtitle">Bestimmt durch das heutige Datum</p>
+      </div>
+      <article class="quote-card">
+        <blockquote id="dailyQuoteText">Lade Zitat.</blockquote>
+        <p id="dailyQuoteAuthor" class="quote-author"></p>
+        <p id="dailyQuoteTags" class="quote-tags"></p>
+      </article>
+    </section>
+
+    <section class="controls" aria-labelledby="controlsHeading">
+      <div class="section-header">
+        <h2 id="controlsHeading" data-i18n="random.heading">Zufallszitat</h2>
+        <p class="section-subtitle" data-i18n="random.subtitle">Entdecke neue Gedanken und speichere Favoriten</p>
+      </div>
+
+      <article class="quote-card live-quote" role="region" aria-live="polite">
+        <button id="favoriteBtn" type="button" class="favorite-toggle" aria-pressed="false" aria-label="Zitat favorisieren" title="Zitat favorisieren"></button>
+        <blockquote id="quoteText">Lade Zitat.</blockquote>
+        <p id="quoteAuthor" class="quote-author"></p>
+        <p id="quoteTags" class="quote-tags"></p>
+      </article>
+    </section>
+
+    <div class="global-actions">
+      <div class="button-row">
+        <button id="newQuoteBtn" type="button" class="primary-button" data-i18n="buttons.newQuote">Neues Zitat</button>
+      </div>
+      <p id="actionFeedback" class="action-feedback" role="status" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <aside id="favoritesPanel" class="favorites-panel" aria-labelledby="favoritesHeading" data-open="false" hidden>
+    <div class="favorites-header">
+      <h2 id="favoritesHeading" data-i18n="favorites.heading">Favoriten</h2>
+      <button
+        id="closeFavorites"
+        class="icon-button"
+        type="button"
+        aria-label="Favoriten schliessen"
+        data-i18n-attr="aria-label"
+        data-i18n="favorites.close"
+      >
+        ?
+      </button>
+    </div>
+    <p class="favorites-hint" data-i18n="favorites.hint">
+      Gespeicherte Zitate bleiben dank LocalStorage auch nach dem Schliessen erhalten.
+    </p>
+    <ul id="favoritesList" class="favorites-list" aria-live="polite"></ul>
+    <p id="favoritesEmpty" class="favorites-empty" role="status" hidden data-i18n="favorites.empty">
+      Keine Favoriten gespeichert.
+    </p>
+  </aside>
+
+  <footer class="app-footer">
+    <p data-i18n="footer.shortcuts">Tastaturkuerzel: <kbd>N</kbd> neues Zitat - <kbd>F</kbd> favorisieren</p>
+    <p class="data-source" data-i18n="footer.dataSource">
+      Zitate bereitgestellt von <a href="https://www.zitat-service.de" target="_blank" rel="noopener">zitat-service.de</a>
+    </p>
+    <p class="copyright">&copy; 2024 Random Quote App</p>
+  </footer>
+
+  <noscript>
+    <p class="noscript-message" data-i18n="noscript.message">
+      Bitte JavaScript aktivieren, um die Random Quote App nutzen zu koennen.
+    </p>
+  </noscript>
+</body>
+</html>
