@@ -1,0 +1,38 @@
+[
+  {
+    "text": "Wer immer tut, was er schon kann, bleibt immer das, was er schon ist.",
+    "author": "Henry Ford",
+    "tags": ["Motivation", "Weisheit"],
+    "language": "DE"
+  },
+  {
+    "text": "In der Ruhe liegt die Kraft.",
+    "author": "Deutsches Sprichwort",
+    "tags": ["Balance"],
+    "language": "DE"
+  },
+  {
+    "text": "Auch eine Reise von tausend Meilen beginnt mit dem ersten Schritt.",
+    "author": "Laozi",
+    "tags": ["Anfang", "Mut"],
+    "language": "DE"
+  },
+  {
+    "text": "Simplicity is the ultimate sophistication.",
+    "author": "Leonardo da Vinci",
+    "tags": ["Design", "Focus"],
+    "language": "EN"
+  },
+  {
+    "text": "You miss 100% of the shots you don't take.",
+    "author": "Wayne Gretzky",
+    "tags": ["Courage"],
+    "language": "EN"
+  },
+  {
+    "text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill",
+    "tags": ["Resilience"],
+    "language": "EN"
+  }
+]
