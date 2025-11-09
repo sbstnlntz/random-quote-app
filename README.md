@@ -1,24 +1,31 @@
 # Random Quote App
 
-Eine kleine, eigenständige Web-App, die inspirierende Zitate anzeigt und Favoriten lokal speichert. Alles läuft mit Vanilla HTML, CSS und JavaScript – kein Build-Step nötig.
-
-![Screenshot Platzhalter](https://placehold.co/960x540?text=Random+Quote+App)
+A small, standalone web app that displays inspiring quotes and lets you save your favorites locally.
+Built entirely with Vanilla HTML, CSS, and JavaScript — no build step required.
 
 ## Features
-- Lädt Zitate live von <https://api.zitat-service.de> (Deutsch/Englisch umschaltbar) und speichert bereits geladene Einträge lokal für Favoriten
-- Zufällige Zitate mit sanfter Fade-in-Animation und Tageszitat auf Basis des aktuellen Datums (pro Sprache pro Tag stabil)
-- Favoritenverwaltung mit LocalStorage, aufklappbarem Panel und Entfernen einzelner Einträge
-- Kopier- und Teilen-Buttons (Twitter Intent) plus Tastaturkürzel `N`, `F`, `C`
-- Dark-Mode-Toggle mit persistentem Zustand
-- Modernes Glas-/Gradient-Design mit dezenten Animationen und Akzentfarben
-- Barrierearme Umsetzung (Semantik, aria-live, sichtbare Fokus-Stile)
+- Fetches quotes live from https://api.zitat-service.de (switchable between English and German)
+- Caches already loaded quotes locally for offline favorites
+- Random quote generator with smooth fade-in animation
+- Daily quote based on the current date (stable per day and language)
+- Favorite management with LocalStorage, collapsible panel, and single-entry removal
+- Copy and Share buttons (Twitter intent) + keyboard shortcuts N, F, C
+- Dark-mode toggle with persistent state
+- Modern glass/gradient design with subtle animations and accent colors
+- Accessible markup (semantic HTML, aria-live, visible focus styles)
 
 ## Installation & Start
-- Repository bzw. ZIP herunterladen.
-- `index.html` im Browser öffnen (Internetverbindung nötig, um die API zu erreichen).
-- Hinweis: Manche Browser blockieren `fetch` für lokale Dateien. In dem Fall kurz einen lokalen Server starten, z. B. mit `python -m http.server` oder `npx serve`.
+1. Download or clone the repository (or ZIP).
+2. Open index.html in your browser.
+   - An internet connection is required for the live quote API.
+   - Some browsers block fetch() for local files.
+     → In that case, quickly start a local server:
 
-## Projektstruktur
+python -m http.server
+# or
+npx serve
+
+## Project Structure
 ```
 index.html
 style.css
@@ -28,21 +35,27 @@ README.md
 docs/screenshot.png (Platzhalter für eigenen Screenshot)
 ```
 
-## Tastaturkürzel
-- `N` – Neues Zufallszitat anzeigen
-- `F` – Aktuelles Zitat als Favorit speichern oder entfernen
-- `C` – Zitat und Autor in die Zwischenablage kopieren
+## Keyboard Shortcuts
+- `N` – Show a new random quote
+- `F` – Add or remove the current quote from favorites
+- `C` – Copy quote and author to clipboard
 
-## Datenspeicherung
-- Favoriten werden in `localStorage` unter dem Schlüssel `random-quote-app:favorites` abgelegt.
-- Der Dark-Mode-Zustand liegt unter `random-quote-app:theme`.
-- Die beim Start geladenen Zitate bleiben nur im Arbeitsspeicher (kein Persistieren, bei API-Ausfall greift `fallback-quotes.json`).
-Beides bleibt lokal im Browser und kann jederzeit gelöscht werden.
+## Data Storage
+- Favorites are stored in localStorage under
+  random-quote-app:favorites
+- Dark-mode state is stored under
+  random-quote-app:theme
+- Quotes fetched at startup are stored in memory only.
+  On API failure, the app falls back to fallback-quotes.json.
 
-## Lizenz & Hinweise
-- Code: MIT License (siehe `LICENSE`, falls hinzugefügt; andernfalls frei zur Nutzung mit Hinweis auf diese App).
-- Zitate: Gemeinfreie Quellen, klassische Sprichwörter oder eigens formulierte Kurztexte. Bitte bei Veröffentlichungen prüfen, ob zusätzliche Rechtehinweise nötig sind.
-- Datenquelle: Live-Abrufe über <https://www.zitat-service.de>.
+All data stays local in your browser and can be deleted at any time.
+
+## License & Notes
+- Code: MIT License (see LICENSE if available; otherwise free to use with credit).
+- Quotes: Public domain sources, traditional sayings, or original short texts.
+  Please verify any additional rights before publishing.
+- Data source: Live requests via https://www.zitat-service.de
 
 ## Deployment
-- Optimal für GitHub Pages oder jeden anderen statischen Hoster geeignet – einfach die Dateien bereitstellen.
+- Perfect for GitHub Pages or any other static host —
+  just upload the files, and you’re done.
